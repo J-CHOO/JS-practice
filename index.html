@@ -80,9 +80,36 @@
         
         obj.name = $("$name").val();
         obj.city = $("#city").val();
-
+        
         console.log(obj)
 
+        function printConsole(data) {
+            console.log(data);
+        }
+
+        function loadcity() {
+            let city = [{
+                code:"02", 
+                name:"서울"
+            },
+            {
+                code:"064",
+                name:"제주"
+            }
+        ];
+        
+        for(let i = 0; i<city.length ; i++) {
+
+            if(i==0) {
+                $('#city').append('<option value="' + city[i].code + '" selected>' + city[i].name + '</option>');
+            } else {
+                $('#city').append('<option value="' + city[i].code + '">' + city[i].name + '</option>');
+            }
+        }
+
+
+     }
+        
     </script>
 
 </body>
